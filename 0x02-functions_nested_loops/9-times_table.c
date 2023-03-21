@@ -18,7 +18,7 @@ void times_table(void)
 			{
 				_putchar('0' + j / 10);
 			}
-			else if (j > 0)
+			else if (k > 0)
 			{
 				_putchar(' ');
 			}
