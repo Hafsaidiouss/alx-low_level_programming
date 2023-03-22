@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * natural - hat computes and prints the sum of all the multiples of 3 or 5
+ * main - hat computes and prints the sum of all the multiples of 3 or 5
+ * Return : return a sum
  */
-void natural(void)
+int main(void)
 {
 	int i;
 	int sum = 0;
@@ -14,4 +15,5 @@ void natural(void)
 			sum = sum + i;
 		}
 	}
+	return (sum);
 }
