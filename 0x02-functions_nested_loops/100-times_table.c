@@ -53,7 +53,10 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar(' ');
 				}
-				_putchar(' ');
+				if (j > 0)
+				{
+					_putchar(' ');
+				}
 				print (k);
 				if (j < n)
 				{
