@@ -36,6 +36,10 @@ void print(int num)
 	{
 		_putchar('0' + (_abs(num) % 100) / 10);
 	}
+	else
+	{
+		_putchar('0');
+	}
 	_putchar('0' + _abs(num) % 10);
 }
 /**
