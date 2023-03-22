@@ -36,7 +36,7 @@ void print(int num)
 	{
 		_putchar('0' + (_abs(num) % 100) / 10);
 	}
-	else
+	else if (_abs(num) >= 100)
 	{
 		_putchar('0');
 	}
