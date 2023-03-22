@@ -28,11 +28,11 @@ void print(int num)
 	{
 		_putchar('-');
 	}
-	if (_abs(num) > 100)
+	if (_abs(num) >= 100)
 	{
 		_putchar('0' + _abs(num) / 100);
 	}
-	if (_abs(num) % 100 > 10)
+	if (_abs(num) % 100 >= 10)
 	{
 		_putchar('0' + (_abs(num) % 100) / 10);
 	}
