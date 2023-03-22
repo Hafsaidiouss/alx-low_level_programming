@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - hat computes and prints the sum of all the multiples of 3 or 5
- * Return : return a sum
+ * Return: return a sum
  */
 int main(void)
 {
