@@ -11,20 +11,20 @@ int main(void)
 	long int l;
 	int k;
 
-	printf("%ld, ",i);
-	printf("%ld, ",j);
-	for (k = 2; k <= 50; k++)
+	printf("%ld, ", i);
+	printf("%ld, ", j);
+	for (k = 2; k < 50; k++)
 	{
 		l = i + j;
 		i = j;
 		j = l;
 		if (k < 50)
 		{
-			printf("%ld, ",l);
+			printf("%ld, ", l);
 		}
 		else
 		{
-			printf("%ld",l);
+			printf("%ld", l);
 		}
 	}
 	printf("\n");
