@@ -16,7 +16,7 @@ int main(void)
 		l = i + j;
 		i = j;
 		j = l;
-		if (l % 2)
+		if (l % 2 == 0)
 		{
 			sum = sum + l;
 		}
