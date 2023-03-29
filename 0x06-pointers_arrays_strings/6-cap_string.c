@@ -10,20 +10,22 @@ char *cap_string(char *str)
 	char sep[] = " \t\n,;.!?\"(){}";
 	int j = 0;
 
-	for (i = 0; str[i] != 0; i++)
+	for (i = 1; str[i] != '\0'; i++)
 	{
-		while (j < 13)
+		if (str[i] >= 97 && str[i] <= 122)
 		{
-			if (str[i] == sep[j])
+			j = 0;
+			while (j < 13)
 			{
-				if (str[i] >= 97 && str[i] <= 122)
+				if (str[i - 1] == sep[j])
 				{
-					str[i + 1] = str[i + 1] - 97 + 65;
+					str[i] = str[i] - 97 + 65;
+					j = 12;
 				}
-				j = 12;
+				j++;
 			}
-			j++;
 		}
+
 	}
 	return (str);
 }
