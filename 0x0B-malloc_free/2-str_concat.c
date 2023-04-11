@@ -33,8 +33,8 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	for (i = 0; i < size1; i++)
 		dest[i] = s1[i];
-	for (i = 0; i < size2; i++)
-		dest[i + size1] = s2[i];
-	dest[i] = 0;
+	for (i = 0; i <= size2; i++)
+		if (s2 != NULL)
+			dest[i + size1] = s2[i];
 	return (dest);
 }
