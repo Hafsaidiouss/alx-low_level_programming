@@ -10,10 +10,10 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int size1 = 0;
-	int size2 = 0;
+	unsigned int size1 = 0;
+	unsigned int size2 = 0;
 	char *dest;
-	int i;
+	unsigned int i;
 
 	if (s1 == NULL)
 		size1 = 0;
@@ -36,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	for (i = 0; i < size1; i++)
 		dest[i] = s1[i];
-	for (i = 0; i < (int) n; i++)
+	for (i = 0; i < n; i++)
 		dest[i + size1] = s2[i];
 	dest[i + size1] = 0;
 	return (dest);
