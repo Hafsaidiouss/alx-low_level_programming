@@ -1,39 +1,67 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+
 /**
- * new_dog -  function that creates a new dog
+ * _strlen_recursion - returns the length of a string
+ * @s: string
+ *
+ * Return: lenght of s
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s)
+	{
+		return (1 + _strlen_recursion(s + 1));
+	}
+	else
+		return (0);
+}
+
+/**
+ * new_dog - creates a new dog
  * @name: name
  * @age: age
  * @owner: owner
- * Return: new dog
+ *
+ * Return: pointer to new dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog, d;
 	char *n;
 	char *o;
+	struct dog *d, dog;
 
-	n = strdup(name);
+	int ln;
+	int lo;
+	int i;
+
+	ln = _strlen_recursion(name);
+	lo = _strlen_recursion(owner);
+
+	n = (char *) malloc(sizeof(char) * (ln + 1));
 	if (n == NULL)
 		return (NULL);
-	o = strdup(owner);
+	o = (char *) malloc(sizeof(char) * (lo + 1));
 	if (o == NULL)
 	{
 		free(n);
 		return (NULL);
 	}
-	dog = (dog_t *) malloc(sizeof(dog_t));
-	if (dog == NULL)
+
+	for (i = 0; i <= ln; i++)
+		n[i] = name[i];
+	for (i = 0; i <= lo; i++)
+		o[i] = owner[i];
+	dog.name = n;
+	dog.age = age;
+	dog.owner = o;
+	d = (dog_t *) malloc(sizeof(dog_t));
+	if (d == NULL)
 	{
-		free(o);
 		free(n);
+		free(o);
 		return (NULL);
 	}
-	d.name = n;
-	d.age = age;
-	d.owner = o;
-	*dog = d;
-	return (dog);
+	*d = dog;
+	return (d);
 }
