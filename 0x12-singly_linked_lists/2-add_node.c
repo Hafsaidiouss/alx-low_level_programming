@@ -9,10 +9,10 @@
 list_t *create_node(const char *str)
 {
 	list_t *temp = malloc(sizeof(list_t));
-	if (temp == NULL)
-		return (NULL);
 	int len = 0;
 
+	if (temp == NULL)
+		return (NULL);
 	temp->str = strdup(str);
 	while (str != NULL && *str != '\0')
 	{
