@@ -4,6 +4,7 @@
 /**
  * print_list - print list
  * @h: pointer to a list
+ * Return: numvers of nodes
  */
 size_t print_list(const list_t *h)
 {
