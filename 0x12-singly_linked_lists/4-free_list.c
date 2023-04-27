@@ -3,7 +3,7 @@
 #include <stdlib.h>
 /**
  * free_list - function that frees a list_t list.
- * @h: pointer
+ * @head: pointer
  */
 void free_list(list_t *head)
 {
@@ -13,7 +13,7 @@ void free_list(list_t *head)
 	{
 		free(head->str);
 		next = head->next;
-		head = next;
 		free(head);
+		head = next;
 	}
 }
