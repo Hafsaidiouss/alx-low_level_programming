@@ -34,7 +34,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		tail = *head;
 	else
 		*head = nv;
-	while (tail->next != NULL)
+	while (tail != NULL && tail->next != NULL)
 		tail = tail->next;
 	tail->next = nv;
 	return (nv);
