@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * create_node - ctreate a new node
- * @n: the element of the new node
+ * @i: the element of the new node
  * Return: the address of the new node
  */
 listint_t *create_node(const int i)
@@ -18,7 +18,7 @@ listint_t *create_node(const int i)
 }
 /**
  * add_nodeint - function that adds a new node at the beginning of a listint_t list.
- * @h: pointer to a head of the structer
+ * @head: pointer to a head of the structer
  * @n: the element of the nex node
  * Return: he address of the new element, or NULL if it failed
  */
@@ -35,6 +35,6 @@ listint_t *add_nodeint(listint_t **head, const int n)
 		(*head) = nv;
 	}
 	else
-		head = &nv;
+		*head = nv;
 	return (nv);
 }
