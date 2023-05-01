@@ -22,9 +22,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			nv->next = temp->next;
 			temp->next = nv;
+			return (nv);
 		}
 		temp = temp->next;
 		i++;
 	}
-	return (nv);
+	return (NULL);
 }
