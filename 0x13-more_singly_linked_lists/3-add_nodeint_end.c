@@ -9,7 +9,7 @@ listint_t *create_node(const int i)
 {
 	listint_t *nv;
 
-	nv = malloc(sizeof(listint_t));
+	nv = (listint_t*) malloc(sizeof(listint_t));
 	if (nv == NULL)
 		return (NULL);
 	nv->n = i;
@@ -39,9 +39,12 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		tail = *head;
 	else
 		*head = nv;
-	while (tail != NULL && tail->next != NULL)
-		tail = tail->next;
-	tail->next = nv;
+	if (tail != NULL)
+	{
+		while (tail->next != NULL)
+			tail = tail->next;
+		tail->next = nv;
+	}
 	return (nv);
 }
 
