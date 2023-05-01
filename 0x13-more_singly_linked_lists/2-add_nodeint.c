@@ -31,8 +31,8 @@ listint_t *add_nodeint(listint_t **head, const int n)
 		return (NULL);
 	if (*head != NULL)
 	{
-		nv->next = (*head)->next;
-		(*head) = nv;
+		nv->next = *head;
+		*head = nv;
 	}
 	else
 		*head = nv;
