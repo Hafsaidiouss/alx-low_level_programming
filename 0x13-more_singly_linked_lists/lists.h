@@ -15,22 +15,6 @@ typedef struct listint_s
     int n;
     struct listint_s *next;
 } listint_t;
-/**
- * create_node - ctreate a new node
- * @n: the element of the new node
- * Return: the address of the new node
- */
-listint_t *create_node(const int i)
-{
-	listint_t *nv;
-
-	nv = malloc(sizeof(listint_t));
-	if (nv == NULL)
-		return (NULL);
-	nv->n = i;
-	nv->next = NULL;
-	return (nv);
-}
 int _putchar(char c);
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
