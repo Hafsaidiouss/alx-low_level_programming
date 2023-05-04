@@ -1,25 +1,29 @@
+es (20 sloc)  318 Bytes
+ 
+
 #include "main.h"
+
+
+
 /**
- * print_binary - that prints the binary representation of a number.
- * @n: number
+ * print_binary - prints the binary representation of a number
+ * @n: number to print
  */
 void print_binary(unsigned long int n)
 {
-	int result = 0;
-	int c = 0;
-	int i = 0;
+	int nb = 1;
+	unsigned long int nc = n;
 
-	if (n == 0)
-		_putchar('0');
-	for (c = 31; c >= 0; c--)
+	while (nc > 1)
 	{
-		result = n >> c;
-		if (result & 1)
-		{
-			i = 1;
-			_putchar('1');
-		}
-		else if (i == 1)
-			_putchar('0');
+		nc = nc >> 1;
+		nb++;
+	}
+
+	while (nb != 0)
+	{
+		_putchar(((n >> (nb - 1)) & 1) + '0');
+		nb--;
 	}
 }
+
