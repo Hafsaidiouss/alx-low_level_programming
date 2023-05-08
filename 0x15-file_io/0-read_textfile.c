@@ -23,8 +23,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	readcheck = read(fd, buffer, letters);
 	if (readcheck == -1)
 		return (0);
-	writecheck = write(STDOUT_FILENO, buffer, letters);
-	if (writecheck == -1)
+	writecheck = write(STDOUT_FILENO, buffer, readcheck);
+	if (writecheck == -1 || readcheck != writecheck)
 		return (0);
 	close(fd);
 	return (writecheck);
